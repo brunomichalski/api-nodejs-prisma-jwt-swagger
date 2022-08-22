@@ -116,7 +116,7 @@
                 "tags": ["Users"],
                 "parameters": [
                     {
-                        "id": "id",
+                        "name": "id",
                         "in": "query",
                         "description": "Id para busca",
                         "required": true
@@ -158,7 +158,7 @@
                 "tags": ["Users"],
                 "parameters": [
                     {
-                        "id": "id",
+                        "name": "id",
                         "in": "query",
                         "description": "Id para altereção",
                         "required": true
@@ -218,7 +218,7 @@
                 "tags": ["Users"],
                 "parameters": [
                     {
-                        "id": "id",
+                        "name": "id",
                         "in": "query",
                         "description": "Id para exclusão",
                         "required": true
@@ -262,7 +262,7 @@
                 "tags": ["Posts"],
                 "parameters": [
                     {
-                        "id": "id",
+                        "name": "id",
                         "in": "query",
                         "description": "Id para criar post para um usuário",
                         "required": true
@@ -392,7 +392,7 @@
                 "tags": ["Posts"],
                 "parameters": [
                     {
-                        "id": "id",
+                        "name": "id",
                         "in": "query",
                         "description": "Id para altereção",
                         "required": true
@@ -444,6 +444,53 @@
                                                     "type": "string"
                                                 }
                                             }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/clima/{cidade}/{uf}": {
+            "get": {
+                "description": "Retorna dados climaticos de uma cidade",
+                "summary": "Retorna dados climaticos de uma cidade",
+                "tags": ["Clima"],
+                "parameters": [
+                    {
+                        "name": "Cidade",
+                        "in": "query",
+                        "description": "Cidade para busca",
+                        "required": true
+                    },
+                    {
+                        "name": "Uf",
+                        "in": "query",
+                        "description": "Cidade para busca",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Error"
+                    },
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "cidade": {
+                                            "type": "string"
+                                        },
+                                        "clima": {
+                                            "type": "string"
+                                        },
+                                        "temperatura": {
+                                            "type": "string"
                                         }
                                     }
                                 }
